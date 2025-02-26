@@ -1,0 +1,42 @@
+@import '../../../shared/style/colors-theme.scss';
+
+.header {
+    width: calc(100% - 140px);
+    float: left;
+    padding: 20px;
+    background-color: white;
+
+    .page-title {
+        float: left;
+
+        h2 {
+            margin: 0;
+        }
+
+        small {
+            color: rgba(#000, 0.5);
+        }
+    }
+
+    .user-settings {
+        float: right;
+        vertical-align: middle;
+
+        mat-icon{
+            color: $app-blue;
+        }
+        
+
+        button,
+        img {
+            margin: 0 10px;
+        }
+
+        img {
+            width: 50px;
+            vertical-align: middle;
+            border: 1px solid $app-blue;
+            border-radius: 100px;
+        }
+    }
+}

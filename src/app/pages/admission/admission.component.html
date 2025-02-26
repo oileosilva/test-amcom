@@ -1,0 +1,38 @@
+<div class="mdl-grid  admission">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--3-offset">
+        <app-stepper></app-stepper>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+        <h2>
+            Informe o CPF do futuro cooperado(a)
+        </h2>
+        <h4>
+            Se necessário, você poderá aplicar uma conta existente e retomar este cadastro futuramente.<br />
+            Digite apenas os números (sem pontos ou traços).
+        </h4>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+        <form [formGroup]="formSearch">
+            <mat-form-field appearance="outline">
+                <mat-label>CPF</mat-label>
+                <input matInput type="text" formControlName="CPF" autocomplete="off" mask="000.000.000-00"
+                    placeholder="000.000.000-00" required>
+                <button matSuffix mat-icon-button aria-label="Clear" (click)="resetForm()">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <mat-error *ngIf="formSearch.controls['CPF'].invalid">
+                    {{getErrorInputMessage(formSearch.controls['CPF'])}}
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="mdl-cell mdl-cell--9-col"></div>
+    <div class="mdl-cell mdl-cell--3-col">
+        <button mat-flat-button color="primary" (click)="search()" [disabled]="formSearch.invalid">
+            Consultar
+        </button>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col ">
+        <app-client-info [idClient]="idClient"></app-client-info>
+    </div>
+</div>

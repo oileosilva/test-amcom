@@ -1,0 +1,83 @@
+<div class="mdl-grid client-info" *ngIf="clientSelected">
+    <div class="mdl-cell mdl-cell--4-col">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Situação cadastral do CPF
+                </mat-card-title>
+                <mat-card-subtitle>
+                    Consulta na Receita Federal
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>person</mat-icon>
+                        <div matListItemTitle>{{clientSelected.name}}</div>
+                        <div matListItemLine>Nome</div>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon class="icon-ok" matListItemIcon
+                            *ngIf="clientSelected.CPFSituation">task_alt</mat-icon>
+                        <mat-icon class="icon-notok" matListItemIcon
+                            *ngIf="!clientSelected.CPFSituation">cancel</mat-icon>
+                        <div matListItemTitle>{{clientSelected.CPFSituation ? 'Regular': 'Irregular'}}</div>
+                        <div matListItemLine>Situação do CPF</div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col" *ngIf="clientSelected.accountApplication">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Conta aplicação
+                </mat-card-title>
+                <mat-card-subtitle>
+                    Cooperativa Viacredi
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>credit_card</mat-icon>
+                        <div matListItemTitle>{{clientSelected.accountApplication.numberAccount}}</div>
+                        <div matListItemLine>Número da conta</div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="primary">
+                    Duplicar conta
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col" *ngIf="clientSelected.account">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Conta corrente
+                </mat-card-title>
+                <mat-card-subtitle>
+                    Cooperativa Viacredi
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>credit_card</mat-icon>
+                        <div matListItemTitle>{{clientSelected.account.numberAccount}}</div>
+                        <div matListItemLine>Número da conta</div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="primary">
+                    Duplicar conta
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

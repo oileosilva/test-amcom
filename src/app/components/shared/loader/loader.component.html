@@ -1,0 +1,5 @@
+<ng-template [ngIf]="loaderService.isLoading$ | async">
+    <div class="loader-full">
+        <mat-spinner [strokeWidth]="5"></mat-spinner>
+    </div>
+</ng-template>
