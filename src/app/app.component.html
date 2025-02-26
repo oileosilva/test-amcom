@@ -1,4 +1,9 @@
-<app-loader></app-loader>
-<app-navigation></app-navigation>
-<app-header></app-header>
-<router-outlet></router-outlet>
+<div class="mdl-cell--hide-phone">
+    <app-loader></app-loader>
+    <app-navigation></app-navigation>
+    <app-header></app-header>    
+    <router-outlet></router-outlet>
+</div>
+<div class="mdl-cell--hide-tablet mdl-cell--hide-desktop">
+    <app-mobile-view></app-mobile-view>
+</div>
